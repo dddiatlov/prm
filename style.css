@@ -1,0 +1,37 @@
+/* style.css - Классический стиль */
+
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 60px 40px;
+    background-color: #fff;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.title {
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: #2c5530;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 20px;
+    font-variant: small-caps;
+    letter-spacing: 2px;
+}
+
+.ann_title {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #4a5568;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.6;
+    background: #f7fafc;
+    padding: 20px;
+    border-left: 4px solid #cbd5e0;
+    margin-bottom: 40px;
+}
