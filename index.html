@@ -1,16 +1,173 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--    <link rel="stylesheet" href="style.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1 class="title"> EasyBooking </h1>-->
+<!--<h2 class="ann_title">-->
+<!--    EasyBooking is a simple way to find a place to stay.-->
+<!--    We know the struggle of searching for a good room, so we made it quick and stress-free!-->
+<!--    What you’ll get here: Fast and easy booking of apartments, hotels, or guesthouses. Clear prices, no hidden stuff. Places picked to make you stay comfy. Easy communication with host.-->
+<!--    EasyBooking – simple booking, real people. </h2>-->
+<!--</body>-->
+<!--</html>-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyBooking - Find Your Perfect Stay</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1 class="title"> EasyBooking </h1>
-<h2 class="ann_title">
-    EasyBooking is a simple way to find a place to stay.
-    We know the struggle of searching for a good room, so we made it quick and stress-free!
-    What you’ll get here: Fast and easy booking of apartments, hotels, or guesthouses. Clear prices, no hidden stuff. Places picked to make you stay comfy. Easy communication with host.
-    EasyBooking – simple booking, real people. </h2>
+<div class="container">
+    <h1 class="title">EasyBooking</h1>
+    <h2 class="ann_title">
+        EasyBooking is a simple way to find a place to stay.
+        We know the struggle of searching for a good room, so we made it quick and stress-free!
+        What you'll get here: Fast and easy booking of apartments, hotels, or guesthouses. Clear prices, no hidden stuff. Places picked to make you stay comfy. Easy communication with host.
+        EasyBooking – simple booking, real people.
+    </h2>
+
+    <div class="swot-section">
+        <h2 class="swot-title">SWOT Analysis</h2>
+        <div class="swot-container">
+            <div class="swot-quadrant strengths" data-aos="fade-right">
+                <div class="swot-header">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Strengths</h3>
+                </div>
+                <div class="swot-item">Easy to use</div>
+                <div class="swot-item">Clear prices</div>
+                <div class="swot-item">Good places</div>
+            </div>
+
+            <div class="swot-quadrant weaknesses" data-aos="fade-left">
+                <div class="swot-header">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Weaknesses</h3>
+                </div>
+                <div class="swot-item">Not many people know us</div>
+                <div class="swot-item">Few places to book</div>
+                <div class="swot-item">Only in some cities</div>
+            </div>
+
+            <div class="swot-quadrant opportunities" data-aos="fade-right">
+                <div class="swot-header">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Opportunities</h3>
+                </div>
+                <div class="swot-item">More people traveling now</div>
+                <div class="swot-item">Can add more cities</div>
+                <div class="swot-item">Work with local businesses</div>
+            </div>
+
+            <div class="swot-quadrant threats" data-aos="fade-left">
+                <div class="swot-header">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Threats</h3>
+                </div>
+                <div class="swot-item">Big competitors</div>
+                <div class="swot-item">Travel rules change</div>
+                <div class="swot-item">Bad reviews</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="features-section">
+        <h2 class="features-title">Why Choose EasyBooking?</h2>
+        <div class="features-container">
+            <div class="feature-card" data-aos="zoom-in">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Fast Booking</h3>
+                <p>Book your stay in just a few clicks</p>
+            </div>
+
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="feature-icon">
+                    <i class="fas fa-euro-sign"></i>
+                </div>
+                <h3>Best Prices</h3>
+                <p>No hidden fees or surprises</p>
+            </div>
+
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="feature-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h3>Quality Places</h3>
+                <p>We check all accommodations</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>EasyBooking &copy; 2023 | Simple booking, real people.</p>
+    </footer>
+</div>
+
+<script>
+    // Jednoduchá animácia pre prvky s atribútom data-aos
+    document.addEventListener('DOMContentLoaded', function() {
+        const animatedElements = document.querySelectorAll('[data-aos]');
+
+        function checkScroll() {
+            animatedElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Nastavíme počiatočné štýly pre animáciu
+        animatedElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+            // Rešpektujeme oneskorenie ak je nastavené
+            const delay = element.getAttribute('data-aos-delay') || 0;
+            element.style.transitionDelay = delay + 'ms';
+        });
+
+        // Skontrolujeme pozíciu pri načítaní a pri scrollovaní
+        checkScroll();
+        window.addEventListener('scroll', checkScroll);
+
+        // Pridáme hover efekty pre SWOT kvadranty
+        const swotQuadrants = document.querySelectorAll('.swot-quadrant');
+        swotQuadrants.forEach(quadrant => {
+            quadrant.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+
+            quadrant.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Pridáme hover efekty pre feature karty
+        const featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    });
+</script>
 </body>
 </html>
