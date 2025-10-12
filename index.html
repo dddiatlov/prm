@@ -66,6 +66,52 @@
         </div>
     </div>
 
+    <div class="gantt-section">
+        <h2 class="gantt-title">Project Timeline - Gantt Chart</h2>
+        <div class="gantt-container">
+            <div class="gantt-task critical">
+                <div class="task-name">Project Planning</div>
+                <div class="task-bar" style="width: 100%;"></div>
+                <div class="task-dates">Week 1-2</div>
+            </div>
+            <div class="gantt-task">
+                <div class="task-name">Market Research</div>
+                <div class="task-bar" style="width: 50%; margin-left: 0;"></div>
+                <div class="task-dates">Week 1</div>
+            </div>
+            <div class="gantt-task critical">
+                <div class="task-name">Frontend Development</div>
+                <div class="task-bar" style="width: 100%;"></div>
+                <div class="task-dates">Week 2-5</div>
+            </div>
+            <div class="gantt-task critical">
+                <div class="task-name">Backend Development</div>
+                <div class="task-bar" style="width: 100%;"></div>
+                <div class="task-dates">Week 3-6</div>
+            </div>
+            <div class="gantt-task critical">
+                <div class="task-name">Testing & QA</div>
+                <div class="task-bar" style="width: 100%;"></div>
+                <div class="task-dates">Week 6-7</div>
+            </div>
+            <div class="gantt-task critical">
+                <div class="task-name">Deployment & Launch</div>
+                <div class="task-bar" style="width: 100%;"></div>
+                <div class="task-dates">Week 8</div>
+            </div>
+        </div>
+        <div class="gantt-legend">
+            <div class="legend-item">
+                <div class="legend-color critical"></div>
+                <span>Critical Path</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color"></div>
+                <span>Non-critical Tasks</span>
+            </div>
+        </div>
+    </div>
+
     <div class="features-section">
         <h2 class="features-title">Why Choose EasyBooking?</h2>
         <div class="features-container">
@@ -95,13 +141,39 @@
         </div>
     </div>
 
+    <div class="gallery-section">
+        <h2 class="gallery-title">Our Featured Properties</h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Modern Apartment">
+                <div class="gallery-overlay">
+                    <h3>Modern Apartment</h3>
+                    <p>City Center</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Luxury Villa">
+                <div class="gallery-overlay">
+                    <h3>Luxury Villa</h3>
+                    <p>Seaside</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Cozy Studio">
+                <div class="gallery-overlay">
+                    <h3>Cozy Studio</h3>
+                    <p>Downtown</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <p>EasyBooking &copy; 2023 | Simple booking, real people.</p>
     </footer>
 </div>
 
 <script>
-    // Jednoduchá animácia pre prvky s atribútom data-aos
     document.addEventListener('DOMContentLoaded', function() {
         const animatedElements = document.querySelectorAll('[data-aos]');
 
@@ -117,22 +189,18 @@
             });
         }
 
-        // Nastavíme počiatočné štýly pre animáciu
         animatedElements.forEach(element => {
             element.style.opacity = '0';
             element.style.transform = 'translateY(20px)';
             element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
 
-            // Rešpektujeme oneskorenie ak je nastavené
             const delay = element.getAttribute('data-aos-delay') || 0;
             element.style.transitionDelay = delay + 'ms';
         });
 
-        // Skontrolujeme pozíciu pri načítaní a pri scrollovaní
         checkScroll();
         window.addEventListener('scroll', checkScroll);
 
-        // Pridáme hover efekty pre SWOT kvadranty
         const swotQuadrants = document.querySelectorAll('.swot-quadrant');
         swotQuadrants.forEach(quadrant => {
             quadrant.addEventListener('mouseenter', function() {
@@ -144,15 +212,38 @@
             });
         });
 
-        // Pridáme hover efekty pre feature karty
         const featureCards = document.querySelectorAll('.feature-card');
         featureCards.forEach(card => {
             card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px)';
+                this.style.transform = 'translateY(-15px)';
             });
 
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
+            });
+        });
+
+        const ganttTasks = document.querySelectorAll('.gantt-task');
+        ganttTasks.forEach(task => {
+            task.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(8px)';
+                this.style.background = 'rgba(255, 255, 255, 0.9)';
+            });
+
+            task.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+                this.style.background = 'rgba(255, 255, 255, 0.8)';
+            });
+        });
+
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        galleryItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+            });
+
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
             });
         });
     });

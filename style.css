@@ -223,6 +223,155 @@ body {
     color: #b91c1c;
 }
 
+/* Gantt Section */
+.gantt-section {
+    margin-top: 60px;
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.gantt-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #2c5530, #4a7c59);
+}
+
+.gantt-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c5530;
+    margin-bottom: 50px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.gantt-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #2c5530, #4a7c59);
+    border-radius: 2px;
+}
+
+.gantt-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.gantt-task {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #e2e8f0;
+}
+
+.gantt-task::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+}
+
+.gantt-task.critical::before {
+    background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+.gantt-task:not(.critical)::before {
+    background: linear-gradient(90deg, #9ca3af, #6b7280);
+}
+
+.task-name {
+    width: 200px;
+    font-weight: 600;
+    color: #2c5530;
+    font-size: 1.1rem;
+}
+
+.task-bar {
+    height: 25px;
+    border-radius: 8px;
+    margin: 0 20px;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gantt-task.critical .task-bar {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    border: 2px solid #ef4444;
+}
+
+.gantt-task:not(.critical) .task-bar {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 2px solid #9ca3af;
+}
+
+.task-dates {
+    width: 120px;
+    text-align: right;
+    color: #6b7280;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.gantt-legend {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: #f8fafc;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid;
+}
+
+.legend-color.critical {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    border-color: #ef4444;
+}
+
+.legend-color:not(.critical) {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-color: #9ca3af;
+}
+
 /* Features Section */
 .features-section {
     margin-top: 80px;
@@ -335,6 +484,103 @@ body {
     line-height: 1.6;
 }
 
+/* Gallery Section */
+.gallery-section {
+    margin-top: 80px;
+    background: white;
+    border-radius: 16px;
+    padding: 60px 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.gallery-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c5530;
+    margin-bottom: 50px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.gallery-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #2c5530, #4a7c59);
+    border-radius: 2px;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: all 0.4s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(44, 85, 48, 0.9));
+    color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: all 0.4s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.3rem;
+}
+
+.gallery-overlay p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 80px;
+    padding: 30px;
+    color: #6b7280;
+    font-size: 1rem;
+    border-top: 1px solid #e5e7eb;
+    animation: fadeIn 1s ease;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {
@@ -388,21 +634,38 @@ body {
         align-items: center;
     }
 
-    .header, .swot-section, .features-section {
+    .header, .swot-section, .features-section, .gantt-section, .gallery-section {
         padding: 30px 20px;
     }
-}
 
-/* Footer */
-footer {
-    text-align: center;
-    margin-top: 80px;
-    padding: 30px;
-    color: #6b7280;
-    font-size: 1rem;
-    border-top: 1px solid #e5e7eb;
-    animation: fadeIn 1s ease;
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    .gantt-task {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .task-name {
+        width: 100%;
+    }
+
+    .task-bar {
+        width: 100%;
+        margin: 0;
+        height: 20px;
+    }
+
+    .task-dates {
+        width: 100%;
+        text-align: left;
+    }
+
+    .gantt-legend {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
 }
