@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,46 +67,51 @@
 
     <div class="gantt-section">
         <h2 class="gantt-title">Project Timeline - Gantt Chart</h2>
-        <div class="gantt-container">
-            <div class="gantt-task critical">
-                <div class="task-name">Project Planning</div>
-                <div class="task-bar" style="width: 100%;"></div>
-                <div class="task-dates">Week 1-2</div>
+
+        <div class="gantt-grid">
+            <!-- Верхняя временная шкала -->
+            <div class="gantt-header">
+                <span>Week 1</span>
+                <span>Week 2</span>
+                <span>Week 3</span>
+                <span>Week 4</span>
+                <span>Week 5</span>
+                <span>Week 6</span>
+                <span>Week 7</span>
+                <span>Week 8</span>
             </div>
-            <div class="gantt-task">
-                <div class="task-name">Market Research</div>
-                <div class="task-bar" style="width: 50%; margin-left: 0;"></div>
-                <div class="task-dates">Week 1</div>
-            </div>
-            <div class="gantt-task critical">
-                <div class="task-name">Frontend Development</div>
-                <div class="task-bar" style="width: 100%;"></div>
-                <div class="task-dates">Week 2-5</div>
-            </div>
-            <div class="gantt-task critical">
-                <div class="task-name">Backend Development</div>
-                <div class="task-bar" style="width: 100%;"></div>
-                <div class="task-dates">Week 3-6</div>
-            </div>
-            <div class="gantt-task critical">
-                <div class="task-name">Testing & QA</div>
-                <div class="task-bar" style="width: 100%;"></div>
-                <div class="task-dates">Week 6-7</div>
-            </div>
-            <div class="gantt-task critical">
-                <div class="task-name">Deployment & Launch</div>
-                <div class="task-bar" style="width: 100%;"></div>
-                <div class="task-dates">Week 8</div>
-            </div>
-        </div>
-        <div class="gantt-legend">
-            <div class="legend-item">
-                <div class="legend-color critical"></div>
-                <span>Critical Path</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color"></div>
-                <span>Non-critical Tasks</span>
+
+            <!-- Таблица задач -->
+            <div class="gantt-tasks">
+                <div class="gantt-row">
+                    <div class="task-name">Market Research</div>
+                    <div class="task-bar" style="grid-column: 1 / 2;"></div>
+                </div>
+
+                <div class="gantt-row">
+                    <div class="task-name">Project Planning</div>
+                    <div class="task-bar critical" style="grid-column: 1 / 3;"></div>
+                </div>
+
+                <div class="gantt-row">
+                    <div class="task-name">Frontend Development</div>
+                    <div class="task-bar critical" style="grid-column: 2 / 5;"></div>
+                </div>
+
+                <div class="gantt-row">
+                    <div class="task-name">Backend Development</div>
+                    <div class="task-bar critical" style="grid-column: 3 / 6;"></div>
+                </div>
+
+                <div class="gantt-row">
+                    <div class="task-name">Testing & QA</div>
+                    <div class="task-bar" style="grid-column: 6 / 7;"></div>
+                </div>
+
+                <div class="gantt-row">
+                    <div class="task-name">Deployment</div>
+                    <div class="task-bar critical" style="grid-column: 8 / 9;"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -223,16 +227,14 @@
             });
         });
 
-        const ganttTasks = document.querySelectorAll('.gantt-task');
-        ganttTasks.forEach(task => {
-            task.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateX(8px)';
-                this.style.background = 'rgba(255, 255, 255, 0.9)';
+        const ganttRows = document.querySelectorAll('.gantt-row');
+        ganttRows.forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.zIndex = '10';
             });
 
-            task.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateX(0)';
-                this.style.background = 'rgba(255, 255, 255, 0.8)';
+            row.addEventListener('mouseleave', function() {
+                this.style.zIndex = '1';
             });
         });
 

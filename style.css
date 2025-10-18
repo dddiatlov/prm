@@ -223,13 +223,13 @@ body {
     color: #b91c1c;
 }
 
-/* Gantt Section */
+/* Gantt Chart Styles */
 .gantt-section {
-    margin-top: 60px;
     background: white;
     border-radius: 16px;
     padding: 40px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    margin-top: 60px;
     position: relative;
     overflow: hidden;
 }
@@ -248,7 +248,7 @@ body {
     text-align: center;
     font-size: 2.5rem;
     color: #2c5530;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     font-weight: 600;
     position: relative;
     padding-bottom: 15px;
@@ -266,110 +266,107 @@ body {
     border-radius: 2px;
 }
 
-.gantt-container {
+/* Основная сетка */
+.gantt-grid {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-bottom: 30px;
+    gap: 20px;
 }
 
-.gantt-task {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    border-radius: 12px;
-    transition: all 0.4s ease;
-    cursor: pointer;
+/* Верхняя временная линейка */
+.gantt-header {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    text-align: center;
+    font-weight: 600;
+    color: #2c5530;
+    border-bottom: 2px solid #2c5530;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.gantt-header span {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 5px 0;
+    font-size: 0.9rem;
+}
+
+.gantt-header span:last-child {
+    border-right: none;
+}
+
+/* Контейнер с задачами */
+.gantt-tasks {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: 200px repeat(8, 1fr);
+    gap: 15px;
+    position: relative;
+}
+
+/* Строки задач */
+.gantt-row {
+    display: contents;
+}
+
+.task-name {
+    grid-column: 1 / 2;
+    align-self: center;
+    padding: 10px 15px;
+    font-weight: 600;
+    color: #2c5530;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.gantt-row:hover .task-name {
+    background: #2c5530;
+    color: white;
+    transform: translateX(5px);
+}
+
+/* Полоски задач */
+.task-bar {
+    height: 35px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 2px solid #9ca3af;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid #e2e8f0;
 }
 
-.gantt-task::before {
+.task-bar::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 3px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
 }
 
-.gantt-task.critical::before {
-    background: linear-gradient(90deg, #ef4444, #dc2626);
+.gantt-row:hover .task-bar::before {
+    transform: translateX(100%);
 }
 
-.gantt-task:not(.critical)::before {
-    background: linear-gradient(90deg, #9ca3af, #6b7280);
+.gantt-row:hover .task-bar {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.task-name {
-    width: 200px;
-    font-weight: 600;
-    color: #2c5530;
-    font-size: 1.1rem;
-}
-
-.task-bar {
-    height: 25px;
-    border-radius: 8px;
-    margin: 0 20px;
-    position: relative;
-    transition: all 0.3s ease;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-}
-
-.gantt-task.critical .task-bar {
+.task-bar.critical {
     background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
     border: 2px solid #ef4444;
 }
 
-.gantt-task:not(.critical) .task-bar {
-    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-    border: 2px solid #9ca3af;
-}
-
-.task-dates {
-    width: 120px;
-    text-align: right;
-    color: #6b7280;
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-.gantt-legend {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #e5e7eb;
-}
-
-.legend-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
-    border-radius: 8px;
-    background: #f8fafc;
-}
-
-.legend-color {
-    width: 20px;
-    height: 20px;
-    border-radius: 4px;
-    border: 2px solid;
-}
-
-.legend-color.critical {
-    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
-    border-color: #ef4444;
-}
-
-.legend-color:not(.critical) {
-    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-    border-color: #9ca3af;
+.gantt-row:hover .task-bar.critical {
+    background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%);
 }
 
 /* Features Section */
@@ -638,34 +635,47 @@ footer {
         padding: 30px 20px;
     }
 
-    .gantt-task {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
+    .gantt-header {
+        grid-template-columns: repeat(8, 1fr);
+        font-size: 0.7rem;
+        gap: 5px;
+    }
+
+    .gantt-header span {
+        padding: 3px 0;
+    }
+
+    .gantt-tasks {
+        grid-template-columns: 120px repeat(8, 1fr);
+        gap: 10px;
     }
 
     .task-name {
-        width: 100%;
+        font-size: 0.8rem;
+        padding: 8px 10px;
     }
 
     .task-bar {
-        width: 100%;
-        margin: 0;
-        height: 20px;
-    }
-
-    .task-dates {
-        width: 100%;
-        text-align: left;
-    }
-
-    .gantt-legend {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        height: 25px;
     }
 
     .gallery-container {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .gantt-tasks {
+        grid-template-columns: 100px repeat(8, 1fr);
+        gap: 8px;
+    }
+
+    .task-name {
+        font-size: 0.75rem;
+        padding: 6px 8px;
+    }
+
+    .gantt-header {
+        font-size: 0.65rem;
     }
 }
