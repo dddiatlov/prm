@@ -965,4 +965,67 @@ footer {
     .gantt-header {
         font-size: 0.65rem;
     }
+
+}
+.financial-overview-section {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 60px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.financial-overview-section .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c5530;
+    margin-bottom: 40px;
+    font-weight: 600;
+    position: relative;
+}
+
+.financial-overview-section .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #2c5530, #4a7c59);
+    border-radius: 2px;
+}
+
+.financial-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+}
+
+.financial-table th, .financial-table td {
+    border: 1px solid #e2e8f0;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.financial-table th {
+    background: #2c5530;
+    color: white;
+}
+
+.financial-table tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.financial-table tfoot th {
+    background: #4a7c59;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+}
+
+.financial-table tr:hover {
+    background: #f1f5f9;
+    transform: scale(1.01);
+    transition: all 0.2s ease;
 }
