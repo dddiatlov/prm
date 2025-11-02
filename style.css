@@ -170,6 +170,7 @@ body {
     font-size: 1.5rem;
 }
 
+/* SWOT Quadrant Specific Styles */
 .strengths {
     background: linear-gradient(135deg, #f0f9ff 0%, #e1f5fe 100%);
 }
@@ -222,148 +223,7 @@ body {
     color: #b91c1c;
 }
 
-.risk-analysis-section {
-    margin-top: 80px;
-    background: white;
-    border-radius: 16px;
-    padding: 60px 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    position: relative;
-    overflow: hidden;
-}
-
-.risk-analysis-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, #2c5530, #4a7c59);
-}
-
-.risk-intro {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 1.1rem;
-    color: #4a5568;
-    line-height: 1.7;
-}
-
-.risk-table-container {
-    overflow-x: auto;
-    margin-bottom: 40px;
-}
-
-.risk-table {
-    width: 100%;
-    border-collapse: collapse;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.risk-table th {
-    background: #2c5530;
-    color: white;
-    padding: 15px 12px;
-    text-align: left;
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-.risk-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #e2e8f0;
-    vertical-align: top;
-}
-
-.risk-table tbody tr:nth-child(even) {
-    background: #f8fafc;
-}
-
-.risk-table tbody tr:hover {
-    background: #f1f5f9;
-    transform: translateY(-1px);
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.risk-badge {
-    display: inline-block;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: white;
-}
-
-.probability-1 { background: #22c55e; }
-.probability-2 { background: #eab308; }
-.probability-3 { background: #ef4444; }
-
-.impact-2 { background: #eab308; }
-.impact-3 { background: #f97316; }
-.impact-4 { background: #ef4444; }
-
-.risk-level {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 30px;
-    font-weight: 700;
-    color: white;
-}
-
-.level-1 { background: #22c55e; }
-.level-2 { background: #eab308; }
-.level-3 { background: #ef4444; }
-
-.risk-sources {
-    margin-top: 40px;
-    padding-top: 30px;
-    border-top: 1px solid #e2e8f0;
-}
-
-.risk-sources h3 {
-    color: #2c5530;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-}
-
-.sources-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.source-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-}
-
-.source-number {
-    background: #2c5530;
-    color: white;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    font-weight: 600;
-    flex-shrink: 0;
-}
-
-.source-text {
-    color: #4a5568;
-    line-height: 1.6;
-}
-
+/* Gantt Chart Styles */
 .gantt-section {
     background: white;
     border-radius: 16px;
@@ -406,12 +266,14 @@ body {
     border-radius: 2px;
 }
 
+/* Основная сетка */
 .gantt-grid {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
+/* Верхняя временная линейка */
 .gantt-header {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -433,6 +295,7 @@ body {
     border-right: none;
 }
 
+/* Контейнер с задачами */
 .gantt-tasks {
     display: grid;
     grid-template-rows: repeat(6, 1fr);
@@ -441,6 +304,7 @@ body {
     position: relative;
 }
 
+/* Строки задач */
 .gantt-row {
     display: contents;
 }
@@ -464,6 +328,7 @@ body {
     transform: translateX(5px);
 }
 
+/* Полоски задач */
 .task-bar {
     height: 35px;
     border-radius: 8px;
@@ -504,6 +369,7 @@ body {
     background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%);
 }
 
+/* Business Plan Section */
 .business-plan-section {
     margin-top: 80px;
     background: white;
@@ -546,6 +412,7 @@ body {
     border-radius: 2px;
 }
 
+/* Business Plan Slideshow */
 .slideshow-container {
     position: relative;
     overflow: hidden;
@@ -708,6 +575,7 @@ body {
     color: #4a7c59;
 }
 
+/* Navigation */
 .slideshow-nav {
     display: flex;
     justify-content: space-between;
@@ -758,69 +626,7 @@ body {
     transform: scale(1.2);
 }
 
-.financial-overview-section {
-    background: white;
-    border-radius: 16px;
-    padding: 40px;
-    margin: 60px 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-.financial-overview-section .section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #2c5530;
-    margin-bottom: 40px;
-    font-weight: 600;
-    position: relative;
-}
-
-.financial-overview-section .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, #2c5530, #4a7c59);
-    border-radius: 2px;
-}
-
-.financial-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 40px;
-}
-
-.financial-table th, .financial-table td {
-    border: 1px solid #e2e8f0;
-    padding: 12px 15px;
-    text-align: left;
-}
-
-.financial-table th {
-    background: #2c5530;
-    color: white;
-}
-
-.financial-table tbody tr:nth-child(even) {
-    background: #f8fafc;
-}
-
-.financial-table tfoot th {
-    background: #4a7c59;
-    color: white;
-    font-weight: 600;
-    text-align: left;
-}
-
-.financial-table tr:hover {
-    background: #f1f5f9;
-    transform: scale(1.01);
-    transition: all 0.2s ease;
-}
-
+/* Features Section */
 .features-section {
     margin-top: 80px;
     padding: 60px 40px;
@@ -932,6 +738,7 @@ body {
     line-height: 1.6;
 }
 
+/* Gallery Section */
 .gallery-section {
     margin-top: 80px;
     background: white;
@@ -1014,6 +821,7 @@ body {
     opacity: 0.9;
 }
 
+/* Footer */
 footer {
     text-align: center;
     margin-top: 80px;
@@ -1027,6 +835,7 @@ footer {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
+/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -1059,6 +868,7 @@ footer {
     }
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     .swot-container {
         grid-template-columns: 1fr;
@@ -1078,7 +888,7 @@ footer {
         align-items: center;
     }
 
-    .header, .swot-section, .features-section, .gantt-section, .gallery-section, .business-plan-section, .risk-analysis-section {
+    .header, .swot-section, .features-section, .gantt-section, .gallery-section, .business-plan-section {
         padding: 30px 20px;
     }
 
@@ -1139,27 +949,6 @@ footer {
     .section-title {
         font-size: 2rem;
     }
-
-    .risk-table {
-        font-size: 0.85rem;
-    }
-
-    .risk-table th,
-    .risk-table td {
-        padding: 8px 10px;
-    }
-
-    .risk-badge {
-        font-size: 0.75rem;
-        padding: 3px 6px;
-    }
-
-    .risk-level {
-        width: 25px;
-        height: 25px;
-        line-height: 25px;
-        font-size: 0.8rem;
-    }
 }
 
 @media (max-width: 480px) {
@@ -1177,16 +966,66 @@ footer {
         font-size: 0.65rem;
     }
 
-    .risk-analysis-section {
-        padding: 30px 20px;
-    }
+}
+.financial-overview-section {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 60px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
 
-    .risk-table th:nth-child(3),
-    .risk-table td:nth-child(3),
-    .risk-table th:nth-child(4),
-    .risk-table td:nth-child(4),
-    .risk-table th:nth-child(5),
-    .risk-table td:nth-child(5) {
-        display: none;
-    }
+.financial-overview-section .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c5530;
+    margin-bottom: 40px;
+    font-weight: 600;
+    position: relative;
+}
+
+.financial-overview-section .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #2c5530, #4a7c59);
+    border-radius: 2px;
+}
+
+.financial-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+}
+
+.financial-table th, .financial-table td {
+    border: 1px solid #e2e8f0;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.financial-table th {
+    background: #2c5530;
+    color: white;
+}
+
+.financial-table tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.financial-table tfoot th {
+    background: #4a7c59;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+}
+
+.financial-table tr:hover {
+    background: #f1f5f9;
+    transform: scale(1.01);
+    transition: all 0.2s ease;
 }

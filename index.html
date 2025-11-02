@@ -30,7 +30,9 @@
                 </div>
                 <div class="swot-item">Direct and unambiguous placement</div>
                 <div class="swot-item">Clear pricing with no additional costs</div>
-                <div class="swot-item">Possibility of connecting with well-known reservation platforms (like Booking API)</div>
+                <div class="swot-item">Possibility of connecting with well-known reservation platforms (like Booking
+                    API)
+                </div>
             </div>
 
             <div class="swot-quadrant weaknesses" data-aos="fade-left">
@@ -66,94 +68,11 @@
         </div>
     </div>
 
-    <!-- Risk Analysis Section -->
-    <div class="risk-analysis-section">
-        <h2 class="section-title">Risk Analysis</h2>
-
-        <div class="risk-intro">
-            <p>We've identified potential risks that could impact our launch and growth, along with strategies to mitigate them:</p>
-        </div>
-
-        <div class="risk-table-container">
-            <table class="risk-table">
-                <thead>
-                <tr>
-                    <th>Risk #</th>
-                    <th>Risk Description</th>
-                    <th>Probability</th>
-                    <th>Impact</th>
-                    <th>Risk Level</th>
-                    <th>Mitigation Strategy</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Low user engagement during launch phase — users might not adopt the service as expected.</td>
-                    <td><span class="risk-badge probability-3">Very likely (50–100%)</span></td>
-                    <td><span class="risk-badge impact-3">High</span></td>
-                    <td><span class="risk-level level-3">3</span></td>
-                    <td>Strengthen digital marketing campaigns, offer early-user discounts, collaborate with influencers.</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Technical bugs or downtime — website performance may suffer during peak usage.</td>
-                    <td><span class="risk-badge probability-2">Possible (10–20%)</span></td>
-                    <td><span class="risk-badge impact-3">High</span></td>
-                    <td><span class="risk-level level-2">2</span></td>
-                    <td>Use Vercel monitoring tools, maintain weekly code reviews, implement automated testing.</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Financial shortfall — project may not reach the expected funding or revenue target.</td>
-                    <td><span class="risk-badge probability-3">Likely (20–50%)</span></td>
-                    <td><span class="risk-badge impact-3">High</span></td>
-                    <td><span class="risk-level level-3">3</span></td>
-                    <td>Reduce unnecessary marketing spend, apply for startup grants, prepare contingency fund.</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Data privacy or GDPR compliance issue — user data mishandling could lead to penalties.</td>
-                    <td><span class="risk-badge probability-1">Unlikely (0–10%)</span></td>
-                    <td><span class="risk-badge impact-4">Critical</span></td>
-                    <td><span class="risk-level level-2">2</span></td>
-                    <td>Conduct GDPR audit before launch, use AWS/Vercel secure storage, update privacy policy.</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Team availability or burnout — small team may face work overload.</td>
-                    <td><span class="risk-badge probability-2">Possible (10–20%)</span></td>
-                    <td><span class="risk-badge impact-2">Medium</span></td>
-                    <td><span class="risk-level level-2">2</span></td>
-                    <td>Implement flexible working hours, outsource repetitive tasks, maintain open communication.</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="risk-sources">
-            <h3>Sources</h3>
-            <div class="sources-list">
-                <div class="source-item">
-                    <span class="source-number">1</span>
-                    <span class="source-text">AWS & Vercel Documentation (2024) - Used for assessing infrastructure and hosting-related risk mitigation.</span>
-                </div>
-                <div class="source-item">
-                    <span class="source-number">2</span>
-                    <span class="source-text">EU GDPR Compliance Portal (2024) - Used for evaluating legal and data protection risks.</span>
-                </div>
-                <div class="source-item">
-                    <span class="source-number">3</span>
-                    <span class="source-text">CB Insights (2024) - Used for financial risk estimation based on startup data.</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="gantt-section">
         <h2 class="gantt-title">Project Timeline - Gantt Chart</h2>
 
         <div class="gantt-grid">
+            <!-- Верхняя временная шкала -->
             <div class="gantt-header">
                 <span>Week 1</span>
                 <span>Week 2</span>
@@ -165,6 +84,7 @@
                 <span>Week 8</span>
             </div>
 
+            <!-- Таблица задач -->
             <div class="gantt-tasks">
                 <div class="gantt-row">
                     <div class="task-name">Market Research</div>
@@ -442,7 +362,6 @@
             </button>
         </div>
     </div>
-
     <div class="financial-overview-section">
         <h2 class="section-title">EasyBooking — First Year Financial Overview</h2>
 
@@ -599,6 +518,7 @@
         </div>
     </div>
 
+
     <div class="features-section">
         <h2 class="features-title">Why Choose EasyBooking?</h2>
         <div class="features-container">
@@ -663,6 +583,132 @@
     </footer>
 </div>
 
-<script src="script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const animatedElements = document.querySelectorAll('[data-aos]');
+
+        function checkScroll() {
+            animatedElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        animatedElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+            const delay = element.getAttribute('data-aos-delay') || 0;
+            element.style.transitionDelay = delay + 'ms';
+        });
+
+        checkScroll();
+        window.addEventListener('scroll', checkScroll);
+
+        const swotQuadrants = document.querySelectorAll('.swot-quadrant');
+        swotQuadrants.forEach(quadrant => {
+            quadrant.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+
+            quadrant.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        const featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-15px)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        const ganttRows = document.querySelectorAll('.gantt-row');
+        ganttRows.forEach(row => {
+            row.addEventListener('mouseenter', function () {
+                this.style.zIndex = '10';
+            });
+
+            row.addEventListener('mouseleave', function () {
+                this.style.zIndex = '1';
+            });
+        });
+
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        galleryItems.forEach(item => {
+            item.addEventListener('mouseenter', function () {
+                this.style.transform = 'scale(1.05)';
+            });
+
+            item.addEventListener('mouseleave', function () {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Business Plan Slideshow
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            indicators.forEach(indicator => {
+                indicator.classList.remove('active');
+            });
+
+            slides[index].classList.add('active');
+            indicators[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            let nextIndex = currentSlide + 1;
+            if (nextIndex >= slides.length) {
+                nextIndex = 0;
+            }
+            showSlide(nextIndex);
+        }
+
+        function prevSlide() {
+            let prevIndex = currentSlide - 1;
+            if (prevIndex < 0) {
+                prevIndex = slides.length - 1;
+            }
+            showSlide(prevIndex);
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+    });
+</script>
 </body>
 </html>
