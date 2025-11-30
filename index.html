@@ -601,6 +601,255 @@
 
 
 
+    <!-- Stakeholders Section -->
+    <section class="stakeholders-section">
+        <div class="stakeholders-container">
+
+            <div class="stakeholders-header">
+                <div class="header-icon">🧩</div>
+                <h2>Identification of Stakeholders</h2>
+                <p>All key groups involved in EasyBooking and their communication roles</p>
+            </div>
+
+            <!-- Stakeholder Cards -->
+            <div class="stakeholder-grid">
+
+                <!-- 1. Founders -->
+                <div class="stakeholder-card">
+                    <h3>1. Founders / Essential Team</h3>
+                    <p class="stakeholder-role">
+                        Responsible for strategy, feature planning, branding, coordination, and project quality.
+                    </p>
+                    <h4>Tools Used</h4>
+                    <ul class="stakeholder-list">
+                        <li>Telegram – quick messaging</li>
+                        <li>Discord – task management</li>
+                        <li>Google Docs / Drive – collaboration</li>
+                        <li>Notion (optional) – roadmap planning</li>
+                    </ul>
+                </div>
+
+                <!-- 2. Users -->
+                <div class="stakeholder-card">
+                    <h3>2. Platform Users (Travelers)</h3>
+                    <p class="stakeholder-role">
+                        Main external group. Their experience determines the platform’s success.
+                    </p>
+                    <h4>Tools Used</h4>
+                    <ul class="stakeholder-list">
+                        <li>Email newsletters</li>
+                        <li>Website survey form</li>
+                        <li>Instagram / TikTok</li>
+                    </ul>
+                </div>
+
+                <!-- 3. Suppliers -->
+                <div class="stakeholder-card">
+                    <h3>3. Accommodation Suppliers</h3>
+                    <p class="stakeholder-role">
+                        Provide listings and availability. Without them the platform cannot operate.
+                    </p>
+                    <h4>Tools Used</h4>
+                    <ul class="stakeholder-list">
+                        <li>Email for onboarding</li>
+                        <li>Discord – assistance calls</li>
+                        <li>Google Sheets / CRM – early partnership tracking</li>
+                    </ul>
+                </div>
+
+                <!-- 4. Tech Team -->
+                <div class="stakeholder-card">
+                    <h3>4. Technical Team</h3>
+                    <p class="stakeholder-role">
+                        Builds and maintains the website, improves UX, fixes bugs, boosts performance.
+                    </p>
+                    <h4>Tools Used</h4>
+                    <ul class="stakeholder-list">
+                        <li>GitHub – source control</li>
+                        <li>Discord – fast updates</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Communication Matrix -->
+            <div class="matrix-section">
+                <h2 class="matrix-title">Communication Matrix</h2>
+
+                <table class="matrix-table">
+                    <thead>
+                    <tr>
+                        <th>Stakeholder</th>
+                        <th>Subject</th>
+                        <th>Form / Tool</th>
+                        <th>Frequency</th>
+                        <th>Responsible</th>
+                        <th>Goal</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Founders / Essential Team</td>
+                        <td>Feature planning, task distribution</td>
+                        <td>Discord, Telegram, Google Docs</td>
+                        <td>Daily / Weekly</td>
+                        <td>Team Lead</td>
+                        <td>Keep project aligned and progressing</td>
+                    </tr>
+                    <tr>
+                        <td>Platform Users</td>
+                        <td>Feedback, announcements</td>
+                        <td>Survey form, Email, Instagram</td>
+                        <td>Monthly / As needed</td>
+                        <td>Marketing Lead</td>
+                        <td>Improve UX and gather insights</td>
+                    </tr>
+                    <tr>
+                        <td>Accommodation Suppliers</td>
+                        <td>Onboarding, listings, updates</td>
+                        <td>Email, Google Meet</td>
+                        <td>Weekly / As needed</td>
+                        <td>Partnership Manager</td>
+                        <td>Expand partners and keep listings updated</td>
+                    </tr>
+                    <tr>
+                        <td>Technical Team</td>
+                        <td>Bug fixes, development updates</td>
+                        <td>GitHub, Discord, Figma</td>
+                        <td>Daily / As needed</td>
+                        <td>Developer Lead</td>
+                        <td>Maintain features and performance</td>
+                    </tr>
+                    <tr>
+                        <td>Founders + Marketing</td>
+                        <td>Marketing strategy review</td>
+                        <td>Discord Call, Google Docs</td>
+                        <td>Weekly</td>
+                        <td>Team Lead / Designer</td>
+                        <td>Synchronize branding and campaigns</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Stakeholders Styles -->
+    <style>
+        :root {
+            --green-primary: #10b981;
+            --green-light: #d1fae5;
+            --green-dark: #065f46;
+            --green-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .stakeholders-section {
+            background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+            padding: 4rem 0;
+        }
+
+        .stakeholders-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 2rem;
+        }
+
+        .stakeholders-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .stakeholders-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--green-dark);
+        }
+
+        .stakeholders-header p {
+            font-size: 1.2rem;
+            color: #047857;
+        }
+
+        .header-icon {
+            font-size: 4rem;
+            background: var(--green-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stakeholder-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .stakeholder-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            border: 2px solid var(--green-light);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.1);
+            transition: 0.3s ease;
+        }
+
+        .stakeholder-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--green-primary);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+        }
+
+        .stakeholder-card h3 {
+            color: var(--green-dark);
+            margin-bottom: 1rem;
+        }
+
+        .stakeholder-role {
+            color: #065f46;
+            margin-bottom: 1.5rem;
+        }
+
+        .stakeholder-list li {
+            margin-bottom: 0.6rem;
+            color: #047857;
+        }
+
+        .matrix-section {
+            margin-top: 4rem;
+        }
+
+        .matrix-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--green-dark);
+            margin-bottom: 2rem;
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15);
+        }
+
+        .matrix-table th {
+            background: var(--green-primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .matrix-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #d1fae5;
+        }
+
+        .matrix-table tr:nth-child(even) {
+            background: #f0fdf4;
+        }
+    </style>
 
     <section class="quality-section">
         <div class="quality-container">
